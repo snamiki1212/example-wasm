@@ -1,0 +1,18 @@
+spin_manifest_version = 2
+
+[application]
+name = "example-spin"
+version = "0.1.0"
+authors = ["snamiki1212 <snamiki1212@gmail.com>"]
+description = ""
+
+[[trigger.http]]
+route = "/..."
+component = "example-spin"
+
+[component.example-spin]
+source = "target/wasm32-wasi/release/example_spin.wasm"
+allowed_outbound_hosts = []
+[component.example-spin.build]
+command = "cargo build --target wasm32-wasi --release"
+watch = ["src/**/*.rs", "Cargo.toml"]
