@@ -8,6 +8,6 @@ fn handle_example_spin(req: Request) -> anyhow::Result<impl IntoResponse> {
     Ok(Response::builder()
         .status(200)
         .header("content-type", "text/plain")
-        .body("Hello, Fermyon")
+        .body("Hello, Fermyon2")
         .build())
 }
